@@ -1,0 +1,17 @@
+<div>
+  <h2>Todo App</h2>
+  <input [(ngModel)]="newTodo.title" placeholder="New Todo" />
+  <button (click)="addTodo()">Add</button>
+</div>
+<ul>
+  <li *ngFor="let todo of todos">
+    <input
+      type="radio"
+      [(ngModel)]="todo.completed"
+      (change)="toggleComplete(todo.id)"
+    />
+    {{ todo.title }}
+    <button (click)="deleteTodo(todo.id)">Delete</button>
+    <button (click)="updateTodo(todo.id)">Update</button>
+  </li>
+</ul>
